@@ -40,6 +40,8 @@ $ ->
 
     # Start the timer
     startTimer = ->
+      _trackEvent "timer", "start", element.attr "id"
+
       timer = setInterval ->
         seconds = value.data "remaining"
 
