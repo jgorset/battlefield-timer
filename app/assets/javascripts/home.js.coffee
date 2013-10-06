@@ -40,7 +40,7 @@ $ ->
 
     # Start the timer
     startTimer = ->
-      _trackEvent "timer", "start", element.attr "id"
+      _gaq.push ['_trackEvent', "timer", "start", element.attr "id"]
 
       timer = setInterval ->
         seconds = value.data "remaining"
