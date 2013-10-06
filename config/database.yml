@@ -17,7 +17,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: battlefield-timer_development
+  database: battlefield-timer-development
   pool: 5
   username: battlefield-timer
   password:
@@ -46,7 +46,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: battlefield-timer_test
+  database: battlefield-timer-test
   pool: 5
   username: battlefield-timer
   password:
@@ -54,7 +54,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: battlefield-timer_production
+  database: battlefield-timer-production
   pool: 5
   username: battlefield-timer
   password:
