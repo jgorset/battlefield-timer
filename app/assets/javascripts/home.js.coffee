@@ -15,23 +15,40 @@ $ ->
 
     startTimer = ->
       timer = setInterval ->
-        seconds = value.text()
+        seconds = value.data "remaining"
+
+        seconds -= 1
 
         if seconds <= 0
           element.find(".audio")[0].play()
           resetTimer()
-          return
-
-        value.text seconds - 1
+        else
+          setTime seconds
       , 1000
 
     resetTimer = ->
       clearInterval timer
-      value.text value.data "default"
+      setTime value.data "default"
 
     restartTimer = ->
       resetTimer()
       startTimer()
+
+    formatTime = (seconds) ->
+      minutes = Math.floor seconds / 60
+      seconds = seconds % 60
+
+      if String(minutes).length < 2
+        minutes = "0" + minutes
+
+      if String(seconds).length < 2
+        seconds = "0" + seconds
+
+      "#{minutes}:#{seconds}"
+
+    setTime = (seconds) ->
+      value.data "remaining", seconds
+      value.text formatTime seconds
 
     animateClick = ->
       start.addClass "active"
