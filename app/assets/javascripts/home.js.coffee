@@ -13,11 +13,27 @@ $ ->
     start = element.find ".actions .start"
     reset = element.find ".actions .reset"
 
-    start.on "click", ->
-      timer = setInterval ->
-        value.text value.text() - 1
-      , 1000
+    startTimer = ->
+      timer = setInterval (-> value.text value.text() - 1), 1000
 
-    reset.on "click", ->
+    resetTimer = ->
       clearInterval timer
       value.text value.data "default"
+
+    restartTimer = ->
+      resetTimer()
+      startTimer()
+
+    animateClick = ->
+      start.addClass "active"
+      setTimeout (-> start.removeClass "active"), 250
+
+    $(document).on "keydown", (event) ->
+      if event.keyCode == element.data "hotkey"
+        animateClick()
+        restartTimer()
+
+    start.on "click", ->
+      restartTimer()
+
+    reset.on "click", -> resetTimer()
