@@ -16,3 +16,6 @@
 #= require_tree .
 
 window.pusher = new Pusher PUSHER_KEY, cluster: "eu"
+
+unless window.location.hash
+  window.location.hash = Math.random().toString(36).substring(7)
