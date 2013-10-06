@@ -1,3 +1,54 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass here: http://sass-lang.com/
+
+@import "mixins"
+
+#timers
+
+  .timer
+    +clearfix
+    width: 100%
+    text-transform: uppercase
+    font-weight: bold
+    font-size: 12px
+    background: rgba(0, 0, 0, 0.4)
+    padding: 20px
+
+  #attack-helicopter-timer
+
+    .label
+      float: left
+      width: 158px
+      height: 52px
+      text-indent: -1000px
+      background: image-url("attack-helicopter-white.png")
+      margin-right: 50px
+
+    .value
+      font-size: 50px
+      float: left
+      width: 200px
+      margin-right: 50px
+
+    .actions
+      font-size: 15px
+      float: left
+
+      .action
+        position: relative
+        top: 20px
+        background: rgba(0, 0, 0, 0.5)
+        border: 3px solid transparent
+        cursor: pointer
+        padding: 10px
+        border-radius: 5px
+        margin-right: 10px
+
+        &:hover
+          background: rgba(0, 0, 0, 0.8)
+          border: 3px solid #fff
+
+        &:active
+          background: #fff
+          color: #000
