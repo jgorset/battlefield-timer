@@ -21,6 +21,7 @@ $ ->
 
         if seconds <= 0
           element.find(".audio")[0].play()
+          highlight()
           resetTimer()
         else
           setTime seconds
@@ -49,6 +50,10 @@ $ ->
     setTime = (seconds) ->
       value.data "remaining", seconds
       value.text formatTime seconds
+
+    highlight = ->
+      element.addClass("highlight")
+      setTimeout (-> element.removeClass("highlight")), 5000
 
     animateClick = ->
       start.addClass "active"
