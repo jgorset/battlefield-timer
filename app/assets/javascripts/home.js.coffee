@@ -14,7 +14,16 @@ $ ->
     reset = element.find ".actions .reset"
 
     startTimer = ->
-      timer = setInterval (-> value.text value.text() - 1), 1000
+      timer = setInterval ->
+        seconds = value.text()
+
+        if seconds <= 0
+          element.find(".audio")[0].play()
+          resetTimer()
+          return
+
+        value.text seconds - 1
+      , 1000
 
     resetTimer = ->
       clearInterval timer
