@@ -1,5 +1,37 @@
 <section id="timers">
-  <div id="attack-helicopter-timer" class="timer" data-hotkey="72">
+  <div id="attack-jet" class="timer" data-hotkey="65">
+    <audio class="audio">
+      <source src="<%= asset_path "alarm.mp3" %>" type="audio/mpeg">
+    </audio>
+    <div class="label">
+      Attack jet
+    </div>
+    <div class="value" data-remaining="80" data-default="80">
+      01:20
+    </div>
+    <div class="actions">
+      <a class="start action">Start <span class="hotkey">A</span></a>
+      <a class="reset action">Reset</a>
+    </div>
+  </div>
+
+  <div id="stealth-jet" class="timer" data-hotkey="83">
+    <audio class="audio">
+      <source src="<%= asset_path "alarm.mp3" %>" type="audio/mpeg">
+    </audio>
+    <div class="label">
+      Stealth jet
+    </div>
+    <div class="value" data-remaining="80" data-default="80">
+      01:20
+    </div>
+    <div class="actions">
+      <a class="start action">Start <span class="hotkey">S</span></a>
+      <a class="reset action">Reset</a>
+    </div>
+  </div>
+
+  <div id="attack-helicopter" class="timer" data-hotkey="72">
     <audio class="audio">
       <source src="<%= asset_path "alarm.mp3" %>" type="audio/mpeg">
     </audio>
@@ -11,6 +43,22 @@
     </div>
     <div class="actions">
       <a class="start action">Start <span class="hotkey">H</span></a>
+      <a class="reset action">Reset</a>
+    </div>
+  </div>
+
+  <div id="scout-helicopter" class="timer" data-hotkey="67">
+    <audio class="audio">
+      <source src="<%= asset_path "alarm.mp3" %>" type="audio/mpeg">
+    </audio>
+    <div class="label">
+      Scout helicopter
+    </div>
+    <div class="value" data-remaining="80" data-default="80">
+      01:20
+    </div>
+    <div class="actions">
+      <a class="start action">Start <span class="hotkey">C</span></a>
       <a class="reset action">Reset</a>
     </div>
   </div>
